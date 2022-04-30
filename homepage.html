@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- font awesome link (Icons)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+    <!-- css file link -->
+    <link rel="stylesheet" href="css/style1.css">
+
+    <!-- css file link (Swiper/Images slider part)-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+
+
+</head>
+
+<body>
+
+    <!----------- header section start/ navigation bar section start ------------>
+
+    <section class="header">
+
+        <!----------- book icon and word "CEM" ------------>
+        <a href="homepage.html" class="logo"> <i class="fas fa-book"></i> CEM </a>
+
+        <!----------- navigation bar class will consist of icon and word ------------>
+        <nav class="navbar">
+            <a href="homepage.html">
+                <i class="fas fa-home"></i> home
+            </a>
+            <a href="coursepage.html">
+                <i class="fas fa-book-reader"></i> course
+            </a>
+            <a href="prof.html">
+                <i class="fas fa-chalkboard-teacher"></i> prof.
+            </a>
+            <a href="aboutpage.html">
+                <i class="fas fa-id-card"></i> about
+            </a>
+            <a href="contactpage.html">
+                <i class="fas fa-address-book"></i> contact
+            </a>
+        </nav>
+
+        <!----------- menu icon that will appear in mobile version ------------>
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+
+    </section>
+
+    <!----------- header section start/ navigation bar section end --------------->
+
+
+    <!------------------------- Images Slider/Swiper section Start ----------------------------->
+
+    <section class="home" id="home">
+
+        <!-- This section I used free Swiper CDN and follow their instruction --->
+
+        <div class="swiper home-slider">
+            <div class="swiper-wrapper">
+
+                <!-- Use Image as background with the description on top of it --->
+                <!-- Also have an apply button --->
+                <div class="swiper-slide slide"
+                    style="background: url(IMG/นิสิตคอนเสิร์ตฯ-ปี-1-62-พบป๋าเต็ด-181162_191212_0006.jpg) no-repeat;">
+                    <div class="content">
+                        <span>join us in this exciting program</span>
+                        <h3>Expert guideline</h3>
+                        <a href="#" class="btn">Apply Now</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide"
+                    style="background: url(IMG/Visited\ Rachadarai\ Theater.jpg) no-repeat;">
+                    <div class="content">
+                        <span>join us in this exciting program</span>
+                        <h3>Visited famous place</h3>
+                        <a href="#" class="btn">Apply Now</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide" style="background: url(IMG/Facebook\ Live\ Broadcast.jpg) no-repeat;">
+                    <div class="content">
+                        <span>join us in this exciting program</span>
+                        <h3>abundant equipment</h3>
+                        <a href="#" class="btn">Apply Now</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- This two classes will show the next and previous button for change the image --->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+        </div>
+
+    </section>
+
+    <!--------------------------- Images Slider/Swiper Section End ----------------------------->
+
+
+
+
+
+
+
+
+
+    <!----------------------------- Courses offer section end ---------------------------------->
+
+    <section class="courses-offer" id="courses-offer">
+
+        <!------ Create heading & row and in this row we have 3 boxes consist of courses title and image icon ------->
+
+        <h1 class="heading">Our Courses</h1>
+        <div class="row">
+
+            <div class="box">
+                <img src="IMG/engineering.png" alt="Engineering">
+                <h3>Engineering</h3>
+            </div>
+
+            <div class="box">
+                <img src="IMG/concert.png" alt="Concert Management">
+                <h3>Concert/Event Management</h3>
+            </div>
+
+            <div class="box">
+                <img src="IMG/media production.png" alt="Media Production">
+                <h3>Media Production</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!----------------------------- Courses offer section end ---------------------------------->
+
+
+
+    <!--------------------------- student review section start --------------------------------->
+
+    <section class="review" id="review">
+
+        <!--------- Create heading & row and in this row we have vdo and description ----------->
+        <h1 class="heading">Student Review</h1>
+        <div class="row">
+
+            <!------- Video Part import from YouTube --------->
+            <div class="vdo-col">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/OnBPwC4sLig"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <!------- Description Part --------->
+            <div class="vdo-content">
+                <p>
+                    Q or Panot Siripathanakul one of our CEM students. Create content about student life at
+                    Srinakharinwirot University and De Montfort University. By invited the senior and current students
+                    in DMU to interview. The topics in this interview are university life, friend, coursework, and life
+                    between UK and Thailand. The purpose of this content is to clarify some facts regarding our course
+                    and to provide information to someone who may be interested in understanding more about university
+                    life before applying for this course.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!------------------------ student review section end --------------------------->
+
+
+    <!------------------------------- footer start ---------------------------------->
+
+    <section class="footer">
+        <h3>Follow & Contact Us</h3>
+        <p>International Programs in Engineering | @swu.eng.inter</p>
+
+        <!-- Icons and links to our social media -->
+
+        <ul class='socials'>
+            <a href="https://www.facebook.com/swu.eng.inter/" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/ipe_swu/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/IPE_SWU" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </ul>
+
+        <!-- Icons and links to our social media -->
+
+
+        <!-- SWU and DMU Logo -->
+
+        <div class="box">
+            <img src="IMG/swu-eng-inter-white-1.png" alt="" class="swu" width="244" height="44">
+            <img src="IMG/partner-dmu.png" alt="" class="dmu" width="160" height="90">
+        </div>
+
+        <!-- SWU and DMU Logo -->
+
+    </section>
+
+    <!----------------------------------- footer end ---------------------------------------->
+
+
+    <!------------------------------- Credit section start ---------------------------------->
+
+    <section class="credit">Created by Mr.Noppanat Chairat (BOOK) CEM Class of 2 | all rights reserved!</section>
+
+    <!------------------------------- Credit section end ------------------------------------>
+
+
+
+    <!---------------------------------- js file link --------------------------------------->
+
+    <!---------------- Js for swiper section in Home page ---------------->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+
+    <!-- Js for the rest of website ---->
+    <script src="JS/script1.js"></script>
+
+    <!---------------------------------- js file link --------------------------------------->
+
+</body>
+
+</html>

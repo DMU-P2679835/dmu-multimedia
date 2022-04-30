@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+
+    <!-- font awesome link (Icons)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+    <!-- css file link-->
+    <link rel="stylesheet" href="css/style1.css">
+
+</head>
+
+<body>
+
+    <!----------- header section start/ navigation bar section start ------------>
+
+    <section class="header">
+
+        <!----------- book icon and word "CEM" ------------>
+        <a href="homepage.html" class="logo"> <i class="fas fa-book"></i> CEM </a>
+
+        <!----------- navigation bar class will consist of icon and word ------------>
+        <nav class="navbar">
+            <a href="homepage.html">
+                <i class="fas fa-home"></i> home
+            </a>
+            <a href="coursepage.html">
+                <i class="fas fa-book-reader"></i> course
+            </a>
+            <a href="prof.html">
+                <i class="fas fa-chalkboard-teacher"></i> prof.
+            </a>
+            <a href="aboutpage.html">
+                <i class="fas fa-id-card"></i> about
+            </a>
+            <a href="contactpage.html">
+                <i class="fas fa-address-book"></i> contact
+            </a>
+        </nav>
+
+
+        <!----------- menu icon that will appear in mobile version ------------>
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+
+    </section>
+
+    <!----------- header section start/ navigation bar section end --------------->
+
+
+    <!----------- Create sub-header part to create text section that show the page we cureently browsing --------------->
+
+    <section class="sub-header">
+
+        <h1>Contact Us</h1>
+
+    </section>
+
+    <section class="contact" id="contact">
+
+        <div class="row">
+
+            <!-- In row class I will insert embed map from google map and create form -->
+            <iframe class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.551736307252!2d100.56262141462105!3d13.745567590351545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ee109dab6e1%3A0xfd15aa1c632d9677!2sSrinakharinwirot%20University!5e0!3m2!1sen!2suk!4v1649890365404!5m2!1sen!2suk"
+                allowfullscreen="" loading="lazy" alt="SWU Map"></iframe>
+
+
+            <!-- In form will ask users about their name, email, phone, and message their want to ask. Every section need to be fill out so that user can send the message. After sending the message, the site will direct user to the Thankpage webpage that will ensure user that their message reach destination -->
+            <form action="Thankpage.html">
+                <h3>get in touch</h3>
+                <input type="text" placeholder="name" id="uname" name="uname" class="box" required>
+                <input type="email" placeholder="email" id="uemail" name="uemail" class="box" required>
+                <input type="number" placeholder="phone" id="uphone" name="uphone" class="box" required>
+                <textarea name="" placeholder="message" class="box" id="" cols="30" rows="10" required></textarea>
+                <input type="submit" value="send message" class="btn">
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <!------------------------------- footer start ---------------------------------->
+    <section class=" footer">
+        <h3>Follow & Contact Us</h3>
+        <p>International Programs in Engineering | @swu.eng.inter</p>
+
+        <!-- Icons and links to our social media -->
+        <ul class='socials'>
+            <a href="https://www.facebook.com/swu.eng.inter/" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/ipe_swu/
+            " target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/IPE_SWU" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </ul>
+        <!-- Icons and links to our social media -->
+
+
+        <!-- SWU and DMU Logo -->
+
+        <div class="box">
+            <img src="IMG/swu-eng-inter-white-1.png" alt="SWU logo" class="swu" width="244" height="44">
+            <img src="IMG/partner-dmu.png" alt="DMU logo" class="dmu" width="160" height="90">
+        </div>
+
+        <!-- SWU and DMU Logo -->
+
+    </section>
+
+    <!----------------------------------- footer end ---------------------------------------->
+
+
+    <!------------------------------- Credit section start ---------------------------------->
+
+    <section class="credit">Created by Mr.Noppanat Chairat (BOOK) CEM Class of 2 | all rights reserved!</section>
+
+    <!------------------------------- Credit section end ------------------------------------>
+
+
+    <!---------------------------------- js file link --------------------------------------->
+
+
+    <!-- Js for the rest of website ---->
+    <script src="JS/script1.js"></script>
+
+    <!---------------------------------- js file link --------------------------------------->
+</body>
+
+</html>

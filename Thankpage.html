@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks</title>
+
+    <!-- font awesome link (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+    <!-- css file link-->
+    <link rel="stylesheet" href="css/style1.css">
+
+</head>
+
+<body>
+
+    <!----------- header section start/ navigation bar section start ------------>
+
+    <section class="header">
+
+        <!----------- book icon and word "CEM" ------------>
+        <a href="homepage.html" class="logo"> <i class="fas fa-book"></i> CEM </a>
+
+        <!----------- navigation bar class will consist of icon and word ------------>
+        <nav class="navbar">
+            <a href="homepage.html">
+                <i class="fas fa-home"></i> home
+            </a>
+            <a href="coursepage.html">
+                <i class="fas fa-book-reader"></i> course
+            </a>
+            <a href="prof.html">
+                <i class="fas fa-chalkboard-teacher"></i> prof.
+            </a>
+            <a href="aboutpage.html">
+                <i class="fas fa-id-card"></i> about
+            </a>
+            <a href="contactpage.html">
+                <i class="fas fa-address-book"></i> contact
+            </a>
+        </nav>
+
+
+        <!----------- menu icon that will appear in mobile version ------------>
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+
+    </section>
+
+    <!----------- header section start/ navigation bar section end --------------->
+
+
+    <!-- This class will work with js to show the message to user that I received their message -->
+    <section class="response">
+        <p>Thanks for the feedback <span id="userName"></span>!</p>
+        <p>Your email is <span id="userEmail"></span> and your phone number is <span id="userPhone"><span></p>
+    </section>
+
+
+    <!------------------------------- footer start ---------------------------------->
+    <section class="footer">
+        <h3>Follow & Contact Us</h3>
+        <p>International Programs in Engineering | @swu.eng.inter</p>
+
+        <!-- Icons and links to our social media -->
+
+        <ul class='socials'>
+            <a href="https://www.facebook.com/swu.eng.inter/" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/ipe_swu/
+            " target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/IPE_SWU" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </ul>
+        <!-- Icons and links to our social media -->
+
+        <!-- SWU and DMU Logo -->
+
+        <div class="box">
+
+            <img src="IMG/swu-eng-inter-white-1.png" alt="" class="swu" width="244" height="44">
+            <img src="IMG/partner-dmu.png" alt="" class="dmu" width="160" height="90">
+
+        </div>
+
+        <!-- SWU and DMU Logo -->
+
+    </section>
+
+    <!----------------------------------- footer end ---------------------------------------->
+
+
+    <!------------------------------- Credit section start ---------------------------------->
+
+    <section class="credit">Created by Mr.Noppanat Chairat (BOOK) CEM Class of 2 | all rights reserved!</section>
+
+    <!------------------------------- Credit section end ------------------------------------>
+
+
+
+    <!---------------------------------- js file link --------------------------------------->
+
+    <!-- Js for the rest of website ---->
+    <script src="JS/script1.js"></script>
+
+    <!-- Js that get information from input to show on screen ---->
+    <script>
+        // This is the URL of the page, which contains the form parameters
+        let url = document.URL;
+
+        // searchParams allows us to identily all the parameters in the URL
+        let paramaters = (new URL(url)).searchParams;
+        let uname = paramaters.get("uname");
+        let uemail = paramaters.get("uemail");
+        let uphone = paramaters.get("uphone");
+
+        // let's display the name and email!
+        document.getElementById("userName").innerHTML = uname;
+        document.getElementById("userEmail").innerHTML = uemail;
+        document.getElementById("userPhone").innerHTML = uphone;
+    </script>
+
+</body>
+
+</html>

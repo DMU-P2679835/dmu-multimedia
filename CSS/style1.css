@@ -1,0 +1,1295 @@
+
+/* import fonts from google font */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@100;300;400;500;600&display=swap');
+
+
+/* Set the color that will be use in this websiten to the name I want so it will be easy to call it out */
+:root{
+    --black:#222;
+    --white:#fff;
+    --light-black:#666;
+    --light-white:#ccc;
+    --light-bg:#f5f5f5;
+    --dark-bg:rgba(0,0,0,.7);
+    --border:.1rem solid #aaa;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --brown:#A52A2A;
+    --grey:#808080;
+}
+/*----------------------------------------------*/
+/* Default setting on webpage */
+/* Reference from channel Mr.Web Designer on YouTube 
+url(https://www.youtube.com/watch?v=-dBzfndKwZo&list=PLJj3q3QElARCQsNKN8Zrwv0aOPOq1zKgC&index=3&t=4106s)*/
+*{
+    font-family: 'PT Serif', serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(.43,1.1,.62,1.08);
+    
+}
+
+* > img{
+    user-select: none;
+    pointer-events: none;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+/*----------------------------------------------*/
+
+/* Scroll bar set */
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+html::-webkit-scrollbar-track{
+    background-color: var(--white);
+}
+html::-webkit-scrollbar-thumb{
+    background-color: var(--light-black);
+}
+/* Scroll bar set */
+
+/*----------------------------------------------*/
+
+/* Reference from channel dcode on YouTube 
+url(https://www.youtube.com/watch?v=zWB219zf1og)*/
+
+/* Set the section area's padding and animation before content appear */
+section{
+    animation: transitionIn 0.75s;
+    padding: 5rem 10%;
+    
+}
+
+@keyframes transitionIn {
+    from{
+        opacity: 0;
+        transform: translateY(-7px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+/*----------------------------------------------*/
+
+/* Code idea from channel Mr.Web Designer on YouTube 
+url(https://www.youtube.com/watch?v=-dBzfndKwZo&list=PLJj3q3QElARCQsNKN8Zrwv0aOPOq1zKgC&index=3&t=4106s)*/
+
+/*---------------Navigation Bar------------------*/
+/* Navigation bar area design */
+.header{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top:0; left:0; right: 0;
+    background: var(--grey);
+    z-index: 1000;
+}
+
+/* Logo & word design on header (Left) */
+.header .logo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:var(--black);
+}
+
+/* Word design color and position (Left) */
+.header .logo i{
+    color: var(--black);
+    padding-right: .5rem;
+}
+
+/* Navigation bar (text design&position) */
+.header .navbar a{
+    font-size: 2rem;
+    margin-left: 2rem;
+    color:var(--white);
+    padding: 1rem;
+}
+
+/* Navigation bar (when text hover) */
+.header .navbar a:hover{
+    color: var(--brown);
+}
+
+/* Menu icon button on Navigation bar design */
+#menu-btn{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--white);
+    /* Display none because it will show in mobile version */
+    display: none;
+}
+
+/*----------------------------------------------*/
+
+/*---------- Homepage start -------------*/
+
+/*-------- Image Slider Part --------*/
+
+/* Code idea from channel Mr.Web Designer on YouTube 
+url(https://www.youtube.com/watch?v=-dBzfndKwZo&list=PLJj3q3QElARCQsNKN8Zrwv0aOPOq1zKgC&index=3&t=4106s)*/
+
+/* Set padding & Background color*/
+.home{
+    padding: 0;
+    background: var(--black);
+}
+
+/* Set the image slider area */
+.home .slide{
+    min-height: 100vh;
+    /* bg size cover the webpage */
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .slide::before{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.7);
+    z-index: -1;
+}
+
+/* Set the content class that store text to appear
+at the center of the image */
+.home .slide .content{
+    text-align: center;
+    width: 70rem;
+}
+
+/* Font display value (span) */
+.home .slide .content span{
+    font-size: 3rem;
+    display: block;
+    padding-bottom: .5rem;
+    color: var(--white);
+    /* text FadeIn 0.2s from backward */
+    animation: FadeIn 0.4s cubic-bezier(0.54, 1.3, 0.63, 1.34) 0.2s backwards;
+}
+
+/* Font display value (h3) */
+.home .slide .content h3{
+    font-size: 8vw;
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: 0 .5rem 1rem rgba(0,0,0,.7);
+    line-height: 1;
+    padding: 2rem 0;
+    /* text FadeIn 0.4s from backward */
+    animation: FadeIn 0.4s cubic-bezier(0.54, 1.3, 0.63, 1.34) 0.4s backwards;
+    
+}
+
+/* when swiper active the content will display: inline-block */
+.home .slide .swiper-slide-active .content{
+    display: inline-block;
+}
+
+/* Apply button dasign */
+.home .slide .content .btn{
+    margin-top: 1rem;
+    display: inline-block;
+    background: var(--brown);
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1rem 3rem;
+    border-radius: 5rem;
+    /* button FadeIn 0.6s from backward */
+    animation: FadeIn 0.4s cubic-bezier(0.54, 1.3, 0.63, 1.34) 0.6s backwards;
+}
+
+/* FadeIn keyframe for text to appear on image slider (from opacity 0, transform from y size -4rem and scale 1 */
+@keyframes FadeIn {
+    0%{
+        transform: translateY(-4rem) scale(1);
+        opacity: 0;
+    }
+}
+
+/* when hover the button letter will spacing .2rem */
+.home .slide .content .btn:hover{
+    letter-spacing: .2rem;
+}
+
+/* prev&next button in image slider design*/
+.home .home-slider .swiper-button-next{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    background: var(--white);
+    color: var(--grey);
+}
+
+.home .home-slider .swiper-button-prev{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    background: var(--white);
+    color: var(--grey);
+}
+
+/* prev&next button when hover, color will change */
+.home .home-slider .swiper-button-next:hover{
+    background: var(--brown);
+    color: var(--white);
+}
+
+.home .home-slider .swiper-button-prev:hover{
+    background: var(--brown);
+    color: var(--white);
+}
+
+/* reduce the arrow size */
+.home .home-slider .swiper-button-next::after{
+    font-size: 2rem;
+}
+.home .home-slider .swiper-button-prev::after{
+    font-size: 2rem;
+}
+/*-------------------------*/
+
+
+
+
+/*------ Course Offer ------*/
+
+/* Title for courses offer section design */
+.courses-offer .heading{
+    text-align: center;
+    font-size: 4rem;
+    color: var(--black);
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-bottom: 3rem;
+}
+
+/* In row class */
+.courses-offer .row{
+    /* content will display in flex box*/
+    display: flex;
+    /* distance from top will be 5% from title */
+    margin-top: 5%;
+    /* There are space between each content */
+    justify-content: space-between;
+
+}
+
+/* Inside the box class */
+.courses-offer .row .box{
+    
+    /* Text Style */
+    text-align: center;
+
+    /* the box will wrap perfect when change to mobile version in vertically way */
+    flex-basis: 31%;
+    flex-wrap: wrap;
+    padding: 2rem;
+
+    /* border design for box */
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border:.1rem solid rgba(0,0,0,.3);
+    border-radius: .5rem;
+}
+.courses-offer .row .box img{
+    height: 7rem;
+}
+.courses-offer .row .box:hover{
+    transform: scale(1.06);
+}
+/*-------------------------*/
+
+
+/*------ Review Part ------*/
+
+/* Title for review section design */
+.review .heading{
+    font-size: 4rem;
+    color: var(--black);
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-bottom: 3rem;
+}
+
+/* the content will display in flex box and will wrap perfect when change to mobile version in vertically way. Gap between video and text will be 5rem */
+.review .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+    
+}
+
+/* Set flex box (Flex-grow, shrink, and basis) */
+/* The different from video and content is width (Flex-basis) */
+.review .row .vdo-col{
+    flex:1 1 41rem;
+    
+}
+.review .row .vdo-content{
+    flex:1 1 34rem;
+}
+
+/* Video area design */
+.review .row .vdo-col iframe{
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: .5rem;
+}
+
+
+/* Content's text design */
+.review .row .vdo-content p{
+    padding:1rem 0 1rem;
+    font-size: 1.5rem;
+    line-height: 2;
+    color: var(--black);
+}
+/*-------------------------*/
+
+
+/*---------- Homepage end -------------*/
+
+
+
+
+/*----Sub-header part--------*/
+
+/* Use in Course, Prof, About, and Contact page */
+.sub-header{
+    /* Create a black rectangular box */
+    height: 19vh;
+    width: 100%;
+    display: block;
+    background-color: var(--black);
+    background-size: cover;
+    
+}
+.sub-header h1{
+    /* Adjust the font and color */
+    color: var(--white);
+    font-size: 3.5rem;
+    
+}
+
+/*----Sub-header part end--------*/
+
+
+
+
+
+
+/*----------Course page Start-------------*/
+
+/* Adjust the font and distant */
+.course .course-programme{
+    font-size: 2rem;
+    padding-bottom: 3rem;
+}
+
+/* Idea and reference by YouTube channel "Mr. Web Designer" when he positions the text beside the image */
+
+/* 1st year course content */
+
+/* Set the course content to be in flex box, appear in center and when it appear in  mobile version it will wrap the content in sequence I ordered */
+.course .row .course-col{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+/* Set image flex box value */
+.course .row .course-col .img-y1{
+    flex:1 1 41rem;
+}
+
+/* Set image value */
+.course .row .course-col .img-y1 img{
+    width: 100%;
+    margin-top: .5rem;
+    border-radius: .5rem;
+}
+
+/* Set content flex box value */
+.course .row .course-col .content-y1{
+    flex:1 1 41rem;
+}
+
+/* Set text value in content box */
+.course .row .course-col .content-y1 p{
+    padding: 1rem 0 1rem;
+    font-size: 1.5rem;
+    line-height: 2;
+    
+}
+
+/* 2nd year course content */
+
+/* Set everything same as 1st year but flex-wrap will reverse. Because the image and text will appear opposite from the other two course details. But in mobile version I want the details appear in the same order */
+
+.course .row .course-col .Second-year{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap: 2rem;
+    position: relative;
+}
+
+.course .row .course-col .Second-year .img-y2{
+    flex:1 1 41rem;
+}
+.course .row .course-col .Second-year .img-y2 img{
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: .5rem;
+}
+
+.course .row .course-col .Second-year .content-y2{
+    flex:1 1 41rem;
+}
+
+.course .row .course-col .Second-year .content-y2 p{
+    padding:1rem 0 1rem;
+    font-size:1.5rem;
+    line-height: 2;
+    
+}
+
+/* 3rd year course content */
+/* Set everything same as 1st year */
+
+.course .row .course-col .img-y3{
+    flex:1 1 41rem;
+}
+.course .row .course-col .img-y3 img{
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: .5rem;
+}
+
+.course .row .course-col .content-y3{
+    flex:1 1 41rem;
+}
+
+.course .row .course-col .content-y3 p{
+    padding:1rem 0 1rem;
+    font-size:1.5rem;
+    line-height: 2;
+}
+
+/*----- course content section end -----*/
+
+
+/*----- qualification detail section start -----*/
+
+/* Idea and reference by YouTube channel "Mr. Web Designer" when he positions a lot of text boxes together  */
+
+/* All the class box inside box-container will be display in grid box. How many columns in one row will be autofit to the window. and gap betweeneach box will be 1.5rem */
+.qualification .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+/* Set value design for the box */
+.qualification .box-container .box{
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border:.1rem solid rgba(0,0,0,.3);
+    border-radius: .5rem;
+}
+.qualification .box-container .box:hover{
+    transform: scale(.9);
+}
+/* Set value design for text in the box */
+.qualification .box-container .box .content h3{
+    font-size: 2rem;
+    padding: .75rem 0;
+    color: var(--black);
+}
+
+.qualification .box-container .box .content h2{
+    font-size: 1.7rem;
+    padding: .5rem 0;
+    color: var(--black);
+}
+
+.qualification .box-container .box .content p{
+    font-size: 1.5rem;
+    color: var(--light-black);
+    line-height: 1.75;
+}
+
+/*----- qualification detail section end -----*/
+
+/* Design value for button at the end before footer*/
+.apply-button{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.apply-button .button .btn{
+    background: var(--brown);
+    color: var(--white);
+    border-radius: 5rem;
+    padding: 20px 50px;
+    font-size: 2.5rem;
+    position: relative;
+    margin: 30px;
+
+}
+.apply-button .button .btn:hover{
+    letter-spacing: .3rem;
+}
+
+/*---------------Course Page End--------------*/
+
+
+
+/*---------------Prof Page Start--------------*/
+
+/* Uni name heading design value */
+.team .Uni-heading{
+    text-align: center;
+    padding: 1rem;
+    color: var(--black);
+    text-shadow: 0 .3rem .5rem rgba(0,0,0,.1);
+    font-size: 3rem;
+    padding-bottom: 6rem;
+    padding-top: 3rem;
+}
+
+.team .dmu .Uni-heading{
+    margin-top: 10rem; 
+}
+
+/* Icon front and end of Uni name design value */
+.team .Uni-heading i{
+    color: var(--brown);
+    padding:0 .5rem;
+}
+/* --------------------------------- */
+
+
+/* each department section margin bottom is 5rem */
+.team .team-eng{
+    margin-bottom: 5rem;
+}
+
+/* Department name design value */
+.team .team-eng .heading{
+    margin-bottom: 2.1rem;
+    font-size: 2rem;
+}
+
+/* Icon in front of Department name design value */
+.team .team-eng .heading i{
+    color: var(--brown);
+}
+
+/* All the class box inside box-container will be display in flex box. */
+.team .team-eng .box-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* All box classes design value */
+.team .team-eng .box-container .box{
+    overflow: hidden;
+    border-radius: .5rem;
+    margin: 1rem;
+    background: var(--white);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    height: 35rem;
+    width: 27rem;
+    position: relative;
+}
+
+/* The image inside the box design value */
+.team .team-eng .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* When users hover the img box the image scale will increase */
+.team .team-eng .box-container .box:hover img{
+    transform: scale(1.1);
+}
+
+/* Position of the text inside the box */
+.team .team-eng .box-container .box .info{
+    position: absolute;
+    bottom:0; left: 0;
+    width: 100%;
+    background: var(--white);
+}
+
+/* Text design value */
+.team .team-eng .box-container .box .info h3{
+    font-size: 2.1rem;
+
+}
+/* Text design value */
+.team .team-eng .box-container .box .info p{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+
+}
+
+
+/* Every value same as SWU team above */
+
+.team .team-dmu{
+    margin-bottom: 5rem;
+}
+
+.team .team-dmu .heading{
+    margin-bottom: 2.1rem;
+    font-size: 2rem;
+}
+
+.team .team-dmu .heading i{
+    color: var(--brown);
+}
+
+.team .team-dmu .box-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.team .team-dmu .box-container .box{
+    overflow: hidden;
+    border-radius: .5rem;
+    margin: 1rem;
+    background: var(--white);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    height: 35rem;
+    width: 27rem;
+    position: relative;
+}
+
+.team .team-dmu .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.team .team-dmu .box-container .box:hover img{
+    transform: scale(1.1);
+}
+
+.team .team-dmu .box-container .box .info{
+    position: absolute;
+    bottom:0; left: 0;
+    width: 100%;
+    background: var(--white);
+}
+
+
+.team .team-dmu .box-container .box .info h3{
+    font-size: 2.1rem;
+
+}
+
+.team .team-dmu .box-container .box .info p{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+
+}
+
+/*-------------- Prof. Page End -----------------*/
+
+
+/*-------------- About Page Start --------------*/
+
+/* Using the same idea in course page reference from Mr.Web Designer */
+
+/* each contents in each columns will be in flex box 
+All boxes in the center, gap between boxes is 3rem, the box will wrap in small size */
+.about .row .about-col{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    
+}
+
+/* because the image and content about DMU will appear in opposite position compare to SWU so I created another class and make it wrap-reverse */
+
+.about .row .about-col .about-dmu{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap: 2rem;
+    position: relative;
+
+}
+
+/* SWU image box flex values */
+.about .row .about-col .SWU-img{
+    flex:1 1 41rem;
+}
+
+/* SWU image design values */
+.about .row .about-col .SWU-img img{
+    width: 100%;
+    margin-top: 1rem;
+    
+}
+
+/* SWU text box flex values */
+.about .row .about-col .SWU-content{
+    flex:1 1 41rem;
+}
+
+/* SWU text design values */
+.about .row .about-col .SWU-content p{
+    padding:1rem 0 1rem;
+    font-size: 1.5rem;
+    line-height: 2;
+}
+
+/* All dmu content design values are the same as SWU content above */
+.about .row .about-col .about-dmu .DMU-img{
+    flex:1 1 41rem;
+}
+.about .row .about-col .about-dmu .DMU-img img{
+    width: 100%;
+    margin-top: 1rem;
+    
+    
+}
+
+.about .row .about-col .about-dmu .DMU-content{
+    flex:1 1 41rem;
+}
+
+.about .row .about-col .about-dmu .DMU-content p{
+    padding:1rem 0 1rem;
+    font-size:1.5rem;
+    line-height: 2;
+    
+}
+
+
+/*-------------- About Page End -----------------*/
+
+
+
+
+/*---------------Contact Page--------------*/
+
+
+
+
+/*----Contact and Map part--------*/
+/* CSS setting are the same as when position img beside text */
+
+/* content in this row will display in flex box
+   Gap between boxes is 2rem, 
+   the box will wrap in small size width */
+.contact .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+  
+/* Map flex box values and width */
+.contact .row .map {
+    flex: 1 1 41rem;
+    width: 100%;
+}
+  
+/* Row flex box values, bg color and padding */
+.contact .row form {
+    flex: 1 1 41rem;
+    background: var(--white);
+    padding: 3rem;
+}
+  
+/* "Get In Touch" title text design values */
+.contact .row form h3 {
+    font-size: 2.5rem;
+    color: var(--black);
+    text-transform: capitalize;
+}
+  
+/* Form box design values */
+.contact .row form .box {
+    margin: .7rem 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    border-bottom: var(--border);
+    font-size: 1.6rem;
+    color: var(--grey);
+}
+  
+/* When user clcik on the certain section in form, the border line will become darker. */
+.contact .row form .box:focus {
+    border-color: var(--black);
+}
+  
+/* area of message box */
+.contact .row form textarea {
+    height: 15rem;
+    resize: none;
+}
+
+/* send message button design */
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 1.7rem;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+  
+/* when user hover the button the button will change the color and shape */
+.btn:hover {
+    background: var(--brown);
+    color: var(--white);
+    border-radius: 30px;
+}
+/*----Contact and Map part end--------*/
+
+/*---------------Contact Page End--------------*/
+
+
+
+/*------------- Thanks Page Start -------------*/
+
+/* Response message background area design */
+.response{
+    height: 50vh;
+    width: 100%;
+    display: block;
+    background-color: var(--black);
+    background-size: cover;
+}
+
+/* Response message text design */
+.response p{
+    /*----Adjust the font and distance between font and the top border--------*/
+    color: var(--white);
+    font-size: 3.5rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+/*---------------Thanks Page End--------------*/
+
+
+
+/*-------------- Footer Design ---------------*/
+
+/* Dark-grey Background
+   Content at the center and have space between wach content */
+.footer{
+    background: rgb(168, 168, 168);
+    text-align: center;
+    justify-content: space-between;
+    position: relative;
+    
+}
+
+/* Title text design */
+h3{
+    font-size: 2.2rem;
+    padding: 1rem 0;
+}
+
+
+.footer p{   
+    font-size: 1.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 2%;
+}
+
+/* Social media icons design and position */
+.footer ul a i{
+    color: black;
+    padding-right: 2.5%;
+    font-size: 3rem; 
+}
+
+/* Social media icons design when user hover */
+.footer ul a i:hover{
+    color: white;
+    cursor: pointer;
+}
+
+/* Universities logo setting */
+.footer .box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Universities logo image position */
+.footer .box .dmu{
+    margin-top: 1.9rem;
+}
+.footer .box .swu{
+    margin-top: 5rem;  
+}
+
+/* Credit text design: Grey Background
+   Content at the center and font-size:2rem */
+.credit{
+    text-align: center;
+    background: grey;
+    font-size: 2rem;
+}
+/*-------------- Footer Design ---------------*/
+
+
+
+
+
+
+
+/*------------- media queries ----------------*/
+
+@media (max-width:1200px){
+
+    /* everything in every section will padding top 3rem and padding right 5% */
+    section{
+        padding:3rem 5%;
+    }
+    /* move sub header text from top 1.8rem */
+    .sub-header h1{
+        /* Adjust the distance between font and the top border in course, prof., about, and contact page */
+        margin-top: 1.8rem;
+        
+    }
+}
+
+@media (max-width:991px){
+
+    /* everything in section will padding top 3rem and padding right 2rem */
+    section{
+        padding:3rem 2rem;
+    }
+
+    /* Sets the font-size to a percent of the parent element's font size */
+    html{
+        font-size: 55%;
+    }
+
+    /* move sub header text from top 3rem */
+    .sub-header h1{
+        /* Adjust the distance between font and the top border in course, prof., about, and contact page */
+        margin-top: 3rem;
+        
+    }
+
+    /* Adjust the text in image slider */
+    .home .slide .content h3{
+        font-size: 12vw;
+
+    }
+}
+
+@media (max-width:768px){
+
+    /*-----------------------------------------------------*/
+    /* @header navigation bar */
+
+    /* menu navigation bar will display in inline-block */
+    #menu-btn{
+        display: inline-block;
+    }
+
+    /* Reference from Mr.Web Designer video */
+
+    /* when click on menu icon(hamburger) it will rotate 180deg when forming a cross symbol */
+    /* Work with Javascript */
+    .fa-times{
+        transform: rotate(180deg);
+    }
+
+     /* menu bar design setting */
+    .header .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background-color: var(--light-white);
+        border-top: var(--border);
+
+        /* Path when nav bar still hidden */
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    /* Work with Javascript */
+    .header .navbar.active{
+
+        /* Path when nav bar drop down to show menu */
+        /* Rectangle */ 
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* how each menu tabs appear */
+    .header .navbar a{
+        display: block;
+        margin:2rem;
+        background-color: var(--grey);
+        border-radius: .5rem;
+    }
+    /*-----------------------------------------------------*/
+
+    /* @Home page */
+
+    /* change how the box appear to be in column, 
+    have gap between box */ 
+    .courses-offer .row{
+        flex-direction: column;
+        row-gap: 1.5rem;
+    }
+
+    /* increase inline text */
+    .review .row .vdo-content p{
+        line-height: 2.5;
+        
+    }
+
+    /* Adjust the position of next&prev button */
+    .home .home-slider .swiper-button-next{
+        top: initial;
+        bottom: 1rem;
+    }
+    
+    .home .home-slider .swiper-button-prev{
+        top: initial;
+        bottom: 1rem;
+    }
+
+    /*-----------------------------------------------------*/
+
+    /* @Credit Section */
+    /* Adjust credit font-size */
+    .credit{
+        font-size: 1.5rem;
+    }
+   
+    
+}
+@media (max-width:450px){
+
+    /* Sets the font-size to a percent of the parent element's font size */
+    html{
+        font-size: 50%;
+    }
+    .sub-header h1{
+        /* Adjust the distance between font and the top border in course, prof., about, and contact page */
+        margin-top: 2.5rem;
+        
+    }
+
+    /*-----------------------------------------------------*/
+
+    /* @Home page */
+
+    /* Reduce font size in course offer and review section */
+    .courses-offer .heading{
+        font-size: 3rem;
+    }
+    .review .heading{
+        font-size: 3rem;
+    }
+    /* Adjust the text in image slider */
+    .home .slide .content h3{
+        font-size: 6rem;
+    }
+    .review .row .vdo-content p{
+        font-size: 2rem;
+        line-height: 2.5;
+    }
+    /*-----------------------------------------------------*/
+
+    /* @Footer Section */
+    /* Adjust position of the social media icons */
+    .footer ul{
+        margin-top: 2.5rem;
+    }
+
+    /* Adjust position of the DMU logo */
+    .footer .box .swu{
+        margin-left: 1rem;
+    }
+    .footer .box .dmu{
+        margin-right: 2.1rem;
+    }
+    /*-----------------------------------------------------*/
+
+    /* @Course Page */
+    /* Increase the font and line height to not make the texts
+    small in small window size */
+    
+    .course .row .course-col .content-y3 p{
+        font-size:1.8rem;
+        line-height: 2.5;
+    }
+    .course .row .course-col .Second-year .content-y2 p{
+        font-size:1.8rem;
+        line-height: 2.5;
+    }
+    .course .row .course-col .content-y1 p{
+        font-size:1.8rem;
+        line-height: 2.5;
+    }
+    /*-----------------------------------------------------*/
+
+    /* @About Page */
+    /* Increase the font and line height to not make the texts
+    small in small window size */
+
+    .about .row .about-col .about-dmu .DMU-content p{
+        font-size:1.8rem;
+        line-height: 2.5;
+    }
+    .about .row .about-col .about-dmu .DMU-content h1{
+        font-size:2rem;
+        line-height: 2.5;
+    }
+    .about .row .about-col .SWU-content h1{
+        font-size: 2rem;
+        line-height: 2.5;
+    }
+    .about .row .about-col .SWU-content p{
+        font-size: 1.8rem;
+        line-height: 2.5;
+    }
+    /*-----------------------------------------------------*/
+
+    /* @Thanks Page */
+    /* Adjust text & background area to fit the window */
+    .response p{
+        /* Adjust the font and position */
+        font-size: 2.7rem;
+        margin-top: 3rem;
+    }
+    .response{
+        /* Adjust background area */
+        height: 40vh;
+    }
+    /*-----------------------------------------------------*/
+}
+
+@media (max-width:380px){
+
+    /* @Home page */
+    /* Make text bigger in small window size*/
+    .review .row .vdo-content p{
+        font-size: 1.8rem;
+        line-height: 2.5;
+    }
+
+    /* @Thanks page */
+    /* Adjust text & background area to fit the window */
+    .response p{
+        font-size: 2.3rem;
+    }
+    .response{
+        height: 35vh;
+    }
+    
+    
+    
+}
+
+@media (max-width:325px){
+    
+    /* @Course page */
+    /* Adjust text to fit the window */
+    .course .course-programme{
+        font-size: 1.6rem;
+    }
+    .course .row .course-col .content-y3 p{
+        font-size:1.5rem;
+        line-height: 2.5;
+    }
+    .course .row .course-col .Second-year .content-y2 p{
+        font-size:1.5rem;
+        line-height: 2.5;
+    }
+    .course .row .course-col .content-y1 p{
+        font-size:1.5rem;
+        line-height: 2.5;
+    }
+
+    /* @About page */
+    /* Adjust text to fit the window */
+    .about .row .about-col .about-dmu .DMU-content p{
+        font-size:1.5rem;
+        line-height: 2.5;
+        
+    }
+    .about .row .about-col .about-dmu .DMU-content h1{
+        font-size:1.6rem;
+        line-height: 2.5;
+        
+    }
+    .about .row .about-col .SWU-content h1{
+        font-size: 1.6rem;
+        line-height: 2.5;
+        
+    }
+    .about .row .about-col .SWU-content p{
+        font-size: 1.5rem;
+        line-height: 2.5;
+    }
+
+    /* @Thanks page */
+    /* Adjust text & background area to fit the window */
+    .response p{
+        font-size: 1.9rem;
+    }
+    .response{
+        height: 39vh;
+    }
+}
+
+
+
+
+
+
+
